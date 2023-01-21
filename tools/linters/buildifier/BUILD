@@ -1,5 +1,9 @@
 load("@bazel_skylib//rules:native_binary.bzl", "native_binary")
 
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["buildifier.sh.tpl"])
+
 native_binary(
     name = "buildifier",
     src = select(
@@ -9,7 +13,7 @@ native_binary(
             "//tools/platforms:macos_x86_64": "@buildifier_macos_x86_64//file",
             "//tools/platforms:windows_x86_64": "@buildifier_windows_x86_64//file",
         },
-        no_match_error = "Buildifier: platform not supported"
+        no_match_error = "Buildifier: platform not supported",
     ),
     out = "buildifier",
 )
