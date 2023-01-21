@@ -15,30 +15,30 @@ def _repositories_jvm():
 
 def _repositories_tools():
     http_file(
-        name = "buildifier_linux",
+        name = "buildifier_linux_x86_64",
         downloaded_file_path = "buildifier",
         executable = True,
         sha256 = "7ff82176879c0c13bc682b6b0e482d670fbe13bbb20e07915edb0ad11be50502",
         urls = ["https://github.com/bazelbuild/buildtools/releases/download/6.0.0/buildifier-linux-amd64"],
     )
     http_file(
-        name = "buildifier_macos_arm",
+        name = "buildifier_macos_arm64",
         downloaded_file_path = "buildifier",
         executable = True,
         sha256 = "21fa0d48ef0b7251eb6e3521cbe25d1e52404763cd2a43aa29f69b5380559dd1",
         urls = ["https://github.com/bazelbuild/buildtools/releases/download/6.0.0/buildifier-darwin-arm64"],
     )
     http_file(
-        name = "buildifier_macos_intel",
+        name = "buildifier_macos_x86_64",
         downloaded_file_path = "buildifier",
         executable = True,
         sha256 = "3f8ab7dd5d5946ce44695f29c3b895ad11a9a6776c247ad5273e9c8480216ae1",
         urls = ["https://github.com/bazelbuild/buildtools/releases/download/6.0.0/buildifier-darwin-amd64"],
     )
     http_file(
-        name = "buildifier_windows",
+        name = "buildifier_windows_x86_64",
         downloaded_file_path = "buildifier.exe",
         executable = True,
         sha256 = "b5da47fb9746f3966eed4920fac9325ef7fc5712daafa43648512c3497bdb86f",
-        urls = ["https://github.com/bazelbuild/buildtools/releases/download/6.0.0/buildifier-windows"],
+        urls = ["https://github.com/bazelbuild/buildtools/releases/download/6.0.0/buildifier-windows-amd64.exe"],
     )
