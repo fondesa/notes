@@ -2,6 +2,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file"
 
 def setup_repositories():
     _repositories_jvm()
+    _repositories_kotlin()
     _repositories_tools()
 
 def _repositories_jvm():
@@ -11,6 +12,14 @@ def _repositories_jvm():
         sha256 = "b17d7388feb9bfa7f2fa09031b32707df529f26c91ab9e5d909eb1676badd9a6",
         strip_prefix = "rules_jvm_external-%s" % rules_jvm_external_version,
         url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % rules_jvm_external_version,
+    )
+
+def _repositories_kotlin():
+    rules_kotlin_version = "1.7.1"
+    http_archive(
+        name = "io_bazel_rules_kotlin",
+        sha256 = "fd92a98bd8a8f0e1cdcb490b93f5acef1f1727ed992571232d33de42395ca9b3",
+        urls = ["https://github.com/bazelbuild/rules_kotlin/releases/download/v%s/rules_kotlin_release.tgz" % rules_kotlin_version],
     )
 
 def _repositories_tools():

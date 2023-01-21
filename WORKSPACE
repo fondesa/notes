@@ -4,6 +4,9 @@ load("//:repositories.bzl", "setup_repositories")
 
 setup_repositories()
 
+#
+# JVM setup
+#
 load("@rules_jvm_external//:repositories.bzl", "rules_jvm_external_deps")
 
 rules_jvm_external_deps()
@@ -30,3 +33,18 @@ maven_install(
 load("@maven//:defs.bzl", "pinned_maven_install")
 
 pinned_maven_install()
+
+#
+# Kotlin setup
+#
+
+#load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories", "kotlinc_version")
+#
+#kotlin_repositories(
+#    compiler_release = kotlinc_version(
+#        release = "1.7.22",
+#        sha256 = "9db4b467743c1aea8a21c08e1c286bc2aeb93f14c7ba2037dbd8f48adc357d83",
+#    ),
+#)
+
+#register_toolchains("//:kotlin_toolchain")
