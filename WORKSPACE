@@ -38,13 +38,13 @@ pinned_maven_install()
 # Kotlin setup
 #
 
-#load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories", "kotlinc_version")
-#
-#kotlin_repositories(
-#    compiler_release = kotlinc_version(
-#        release = "1.7.22",
-#        sha256 = "9db4b467743c1aea8a21c08e1c286bc2aeb93f14c7ba2037dbd8f48adc357d83",
-#    ),
-#)
+load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories", "kotlinc_version")
 
-#register_toolchains("//:kotlin_toolchain")
+kotlin_repositories(
+    compiler_release = kotlinc_version(
+        release = "1.7.22",
+        sha256 = "9db4b467743c1aea8a21c08e1c286bc2aeb93f14c7ba2037dbd8f48adc357d83",
+    ),
+)
+
+register_toolchains("//:kotlin_toolchain")
