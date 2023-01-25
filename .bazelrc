@@ -1,0 +1,16 @@
+# Prints all the options from rc files.
+build --announce_rc
+
+# Makes Bazel pick up host-OS-specific config without passing it manually.
+# https://bazel.build/reference/command-line-reference#flag--enable_platform_specific_config
+#
+# E.g. if the host OS is Linux, running `bazel build` is equal to run `bazel build --config=linux`.
+build --enable_platform_specific_config
+
+# Builds the C++ targets in C++ 17.
+build:linux --cxxopt=-std=c++17
+build:linux --host_cxxopt=-std=c++17
+build:macos --cxxopt=-std=c++17
+build:macos --host_cxxopt=-std=c++17
+build:windows --cxxopt=/std:c++17
+build:windows --host_cxxopt=/std:c++17
