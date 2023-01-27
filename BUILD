@@ -1,4 +1,4 @@
-load("@io_bazel_rules_kotlin//kotlin:core.bzl", "define_kt_toolchain")
+load("@rules_kotlin//kotlin:core.bzl", "define_kt_toolchain")
 load("//tools/linters/buildifier:rules.bzl", "buildifier")
 
 buildifier(

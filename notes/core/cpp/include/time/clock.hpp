@@ -1,11 +1,12 @@
 #pragma once
 
+#include <ctime>
 #include <string>
 
 namespace Time {
 
 class Clock {
    public:
-    std::string currentTimeSeconds();
+    virtual std::time_t currentTimeSeconds() = 0;
 };
 }

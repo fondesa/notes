@@ -38,7 +38,7 @@ pinned_maven_install()
 # Kotlin setup
 #
 
-load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories", "kotlinc_version")
+load("@rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories", "kotlinc_version")
 
 kotlin_repositories(
     compiler_release = kotlinc_version(
