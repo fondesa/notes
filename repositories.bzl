@@ -1,14 +1,20 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
-load(
-    "//:third_party/sqlite_archive_info.bzl",
-    "SQLITE_ARCHIVE_ID",
-)
 
 def setup_repositories():
+    _repositories_cc()
     _repositories_jvm()
     _repositories_kotlin()
-    _repositories_third_party()
     _repositories_tools()
+
+def _repositories_cc():
+    sqlite_archive_id = "sqlite-amalgamation-3400100"
+    http_archive(
+        name = "sqlite",
+        sha256 = "49112cc7328392aa4e3e5dae0b2f6736d0153430143d21f69327788ff4efe734",
+        strip_prefix = sqlite_archive_id,
+        url = "https://www.sqlite.org/2022/%s.zip" % sqlite_archive_id,
+        build_file = "@//:third_party/sqlite.BUILD",
+    )
 
 def _repositories_jvm():
     rules_jvm_external_version = "4.5"
@@ -25,14 +31,6 @@ def _repositories_kotlin():
         name = "rules_kotlin",
         sha256 = "fd92a98bd8a8f0e1cdcb490b93f5acef1f1727ed992571232d33de42395ca9b3",
         url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v%s/rules_kotlin_release.tgz" % rules_kotlin_version,
-    )
-
-def _repositories_third_party():
-    http_archive(
-        name = "sqlite",
-        sha256 = "49112cc7328392aa4e3e5dae0b2f6736d0153430143d21f69327788ff4efe734",
-        url = "https://www.sqlite.org/2022/%s.zip" % SQLITE_ARCHIVE_ID,
-        build_file = "@//:third_party/sqlite.BUILD",
     )
 
 def _repositories_tools():
