@@ -14,3 +14,6 @@ build:macos --cxxopt=-std=c++17
 build:macos --host_cxxopt=-std=c++17
 build:windows --cxxopt=/std:c++17
 build:windows --host_cxxopt=/std:c++17
+
+# Prints the output for all the tests.
+test --test_output=all

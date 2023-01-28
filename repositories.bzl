@@ -9,11 +9,19 @@ def setup_repositories():
 def _repositories_cc():
     sqlite_archive_id = "sqlite-amalgamation-3400100"
     http_archive(
-        name = "sqlite",
+        name = "org_sqlite",
         sha256 = "49112cc7328392aa4e3e5dae0b2f6736d0153430143d21f69327788ff4efe734",
         strip_prefix = sqlite_archive_id,
         url = "https://www.sqlite.org/2022/%s.zip" % sqlite_archive_id,
         build_file = "@//:third_party/sqlite.BUILD",
+    )
+
+    google_test_version = "1.13.0"
+    http_archive(
+        name = "com_github_googletest",
+        sha256 = "ffa17fbc5953900994e2deec164bb8949879ea09b411e07f215bfbb1f87f4632",
+        strip_prefix = "googletest-%s" % google_test_version,
+        url = "https://github.com/google/googletest/archive/refs/tags/v%s.zip" % google_test_version,
     )
 
 def _repositories_jvm():

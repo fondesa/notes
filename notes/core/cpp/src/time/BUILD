@@ -11,6 +11,7 @@ cc_library(
         "-Inotes/core/cpp/include",
         "-Inotes/core/cpp/src",
     ],
+    visibility = ["//notes/core/cpp/test:__subpackages__"],
     deps = [
         "//notes/core/cpp/include/time",
     ],
