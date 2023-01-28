@@ -48,3 +48,9 @@ kotlin_repositories(
 )
 
 register_toolchains("//:kotlin_toolchain")
+
+android_sdk_repository(
+    name = "androidsdk",
+    api_level = 33,
+    build_tools_version = "33.0.0",
+)
