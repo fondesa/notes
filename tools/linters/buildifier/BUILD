@@ -1,7 +1,5 @@
 load("@bazel_skylib//rules:native_binary.bzl", "native_binary")
 
-package(default_visibility = ["//visibility:public"])
-
 exports_files(["buildifier.sh.tpl"])
 
 native_binary(
@@ -16,4 +14,5 @@ native_binary(
         no_match_error = "Buildifier: platform not supported",
     ),
     out = "buildifier",
+    visibility = ["//visibility:public"],
 )

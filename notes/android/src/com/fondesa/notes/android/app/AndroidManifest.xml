@@ -3,10 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fondesa.notes.android.app">
 
-    <uses-sdk
-        android:minSdkVersion="21"
-        android:targetSdkVersion="29" />
-
     <application
         android:name=".App"
         android:label="Bazel notes"
