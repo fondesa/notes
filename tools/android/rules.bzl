@@ -13,7 +13,7 @@ def android_bin(
     kt_android_library(
         name = bin_internal_lib,
         srcs = srcs,
-        manifest = "//tools/android/manifest:default_library_manifest",
+        manifest = "//tools/android:default_library_manifest",
         resource_files = resource_files,
         deps = deps,
     )
@@ -35,7 +35,7 @@ def android_lib(**kwargs):
     if "manifest" in kwargs:
         original_manifest = kwargs.pop("manifest")
         manifest = original_manifest
-        transform_manifest_target = "{}_manifest_gen".format(target_name)
+        transform_manifest_target = "{}_manifest_transform".format(target_name)
         transform_manifest(
             name = transform_manifest_target,
             manifest = original_manifest,
@@ -44,7 +44,7 @@ def android_lib(**kwargs):
         )
         manifest = transform_manifest_target
     else:
-        manifest = "//tools/android/manifest:default_library_manifest"
+        manifest = "//tools/android:default_library_manifest"
 
     kt_android_library(
         manifest = manifest,

@@ -1,4 +1,4 @@
-def _library_manifest_impl(ctx):
+def _gen_manifest_impl(ctx):
     out_file = ctx.actions.declare_file("LibraryAndroidManifest.xml")
     substitutions = {
         "@@MIN_SDK_VERSION@@": "%s" % ctx.attr.min_sdk_version,
@@ -11,8 +11,8 @@ def _library_manifest_impl(ctx):
     )
     return [DefaultInfo(files = depset([out_file]))]
 
-library_manifest = rule(
-    implementation = _library_manifest_impl,
+gen_manifest = rule(
+    implementation = _gen_manifest_impl,
     attrs = {
         "min_sdk_version": attr.int(mandatory = True),
         "target_sdk_version": attr.int(mandatory = True),
