@@ -49,14 +49,15 @@ kotlin_repositories(
 
 register_toolchains("//:kotlin_toolchain")
 
-load("@rules_android//android:rules.bzl", "android_sdk_repository")
-load("@rules_android_ndk//:rules.bzl", "android_ndk_repository")
+load("@rules_android_sdk//android:rules.bzl", "android_sdk_repository")
 
 android_sdk_repository(
     name = "androidsdk",
     api_level = 33,
     build_tools_version = "33.0.0",
 )
+
+load("@rules_android_ndk//:rules.bzl", "android_ndk_repository")
 
 android_ndk_repository(
     name = "androidndk",
