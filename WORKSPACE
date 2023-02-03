@@ -57,7 +57,6 @@ pinned_maven_install()
 #
 # Kotlin setup
 #
-
 load("@rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories", "kotlinc_version")
 
 kotlin_repositories(
@@ -69,6 +68,9 @@ kotlin_repositories(
 
 register_toolchains("//:kotlin_toolchain")
 
+#
+# Android setup
+#
 load("@rules_android_sdk//android:rules.bzl", "android_sdk_repository")
 
 android_sdk_repository(
