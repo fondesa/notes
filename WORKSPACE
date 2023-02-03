@@ -4,6 +4,10 @@ load("//:repositories.bzl", "setup_repositories")
 
 setup_repositories()
 
+load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+
+bazel_skylib_workspace()
+
 #
 # JVM setup
 #

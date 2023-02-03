@@ -58,31 +58,43 @@ def _repositories_kotlin():
     )
 
 def _repositories_tools():
+    skylib_version = "1.4.0"
+    http_archive(
+        name = "bazel_skylib",
+        sha256 = "f24ab666394232f834f74d19e2ff142b0af17466ea0c69a3f4c276ee75f6efce",
+        urls = [
+            "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/{}/bazel-skylib-{}.tar.gz"
+                .format(skylib_version, skylib_version),
+            "https://github.com/bazelbuild/bazel-skylib/releases/download/{}/bazel-skylib-{}.tar.gz"
+                .format(skylib_version, skylib_version),
+        ],
+    )
+    buildifier_version = "6.0.0"
     http_file(
         name = "buildifier_linux_x86_64",
         downloaded_file_path = "buildifier",
         executable = True,
         sha256 = "7ff82176879c0c13bc682b6b0e482d670fbe13bbb20e07915edb0ad11be50502",
-        url = "https://github.com/bazelbuild/buildtools/releases/download/6.0.0/buildifier-linux-amd64",
+        url = "https://github.com/bazelbuild/buildtools/releases/download/%s/buildifier-linux-amd64" % buildifier_version,
     )
     http_file(
         name = "buildifier_macos_arm64",
         downloaded_file_path = "buildifier",
         executable = True,
         sha256 = "21fa0d48ef0b7251eb6e3521cbe25d1e52404763cd2a43aa29f69b5380559dd1",
-        url = "https://github.com/bazelbuild/buildtools/releases/download/6.0.0/buildifier-darwin-arm64",
+        url = "https://github.com/bazelbuild/buildtools/releases/download/%s/buildifier-darwin-arm64" % buildifier_version,
     )
     http_file(
         name = "buildifier_macos_x86_64",
         downloaded_file_path = "buildifier",
         executable = True,
         sha256 = "3f8ab7dd5d5946ce44695f29c3b895ad11a9a6776c247ad5273e9c8480216ae1",
-        url = "https://github.com/bazelbuild/buildtools/releases/download/6.0.0/buildifier-darwin-amd64",
+        url = "https://github.com/bazelbuild/buildtools/releases/download/%s/buildifier-darwin-amd64" % buildifier_version,
     )
     http_file(
         name = "buildifier_windows_x86_64",
         downloaded_file_path = "buildifier.exe",
         executable = True,
         sha256 = "b5da47fb9746f3966eed4920fac9325ef7fc5712daafa43648512c3497bdb86f",
-        url = "https://github.com/bazelbuild/buildtools/releases/download/6.0.0/buildifier-windows-amd64.exe",
+        url = "https://github.com/bazelbuild/buildtools/releases/download/%s/buildifier-windows-amd64.exe" % buildifier_version,
     )
