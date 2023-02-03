@@ -9,6 +9,15 @@ load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 bazel_skylib_workspace()
 
 #
+# C++ setup
+#
+load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies", "rules_cc_toolchains")
+
+rules_cc_dependencies()
+
+rules_cc_toolchains()
+
+#
 # JVM setup
 #
 load("@rules_jvm_external//:repositories.bzl", "rules_jvm_external_deps")

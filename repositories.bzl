@@ -23,6 +23,13 @@ def _repositories_android():
     )
 
 def _repositories_cc():
+    rules_cc_version = "0.0.4"
+    http_archive(
+        name = "rules_cc",
+        url = "https://github.com/bazelbuild/rules_cc/releases/download/{}/rules_cc-{}.tar.gz".format(rules_cc_version, rules_cc_version),
+        sha256 = "af6cc82d87db94585bceeda2561cb8a9d55ad435318ccb4ddfee18a43580fb5d",
+        strip_prefix = "rules_cc-%s" % rules_cc_version,
+    )
     sqlite_archive_id = "sqlite-amalgamation-3400100"
     http_archive(
         name = "org_sqlite",
