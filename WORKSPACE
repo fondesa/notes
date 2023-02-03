@@ -55,6 +55,14 @@ load("@maven//:defs.bzl", "pinned_maven_install")
 pinned_maven_install()
 
 #
+# Java setup
+#
+load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
+
+rules_java_dependencies()
+rules_java_toolchains()
+
+#
 # Kotlin setup
 #
 load("@rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories", "kotlinc_version")

@@ -50,6 +50,13 @@ def _repositories_cc():
     )
 
 def _repositories_jvm():
+    rules_java_version = "5.4.0"
+    http_archive(
+        name = "rules_java",
+        url = "https://github.com/bazelbuild/rules_java/releases/download/{}/rules_java-{}.tar.gz"
+            .format(rules_java_version, rules_java_version),
+        sha256 = "9b87757af5c77e9db5f7c000579309afae75cf6517da745de01ba0c6e4870951",
+    )
     rules_jvm_external_version = "4.5"
     http_archive(
         name = "rules_jvm_external",

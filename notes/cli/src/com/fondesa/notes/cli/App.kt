@@ -1,5 +1,8 @@
 package com.fondesa.notes.cli
 
+import com.fondesa.notes.core.SampleBind
+
 fun main(args: Array<String>) {
-    println("CLI app init")
+    val bind = SampleBind()
+    println("CLI app init ${bind.fooFromJNI()}")
 }

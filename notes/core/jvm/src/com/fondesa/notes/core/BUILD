@@ -1,0 +1,14 @@
+load("@rules_java//java:defs.bzl", "java_library")
+load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_library")
+
+java_library(
+    name = "sample_bind",
+    srcs = [
+        "SampleBind.java",
+    ],
+    # TODO: swap to stricter visibility in a real scenario
+    visibility = ["//visibility:public"],
+    deps = [
+        "//notes/core/jni/exports:jni_exports_sample_bind",
+    ],
+)

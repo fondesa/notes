@@ -7,5 +7,6 @@ kt_jvm_binary(
     ],
     main_class = "com.fondesa.notes.cli.AppKt",
     deps = [
+        "//notes/core/jvm/src/com/fondesa/notes/core:sample_bind"
     ],
 )
