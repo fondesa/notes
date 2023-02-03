@@ -5,6 +5,7 @@ def setup_repositories():
     _repositories_cc()
     _repositories_jvm()
     _repositories_kotlin()
+    _repositories_python()
     _repositories_tools()
 
 def _repositories_android():
@@ -62,6 +63,15 @@ def _repositories_kotlin():
         name = "rules_kotlin",
         sha256 = "fd92a98bd8a8f0e1cdcb490b93f5acef1f1727ed992571232d33de42395ca9b3",
         url = "https://github.com/bazelbuild/rules_kotlin/releases/download/v%s/rules_kotlin_release.tgz" % rules_kotlin_version,
+    )
+
+def _repositories_python():
+    rules_python_version = "0.17.3"
+    http_archive(
+        name = "rules_python",
+        sha256 = "8c15896f6686beb5c631a4459a3aa8392daccaab805ea899c9d14215074b60ef",
+        strip_prefix = "rules_python-%s" % rules_python_version,
+        url = "https://github.com/bazelbuild/rules_python/archive/refs/tags/%s.tar.gz" % rules_python_version,
     )
 
 def _repositories_tools():

@@ -18,6 +18,13 @@ rules_cc_dependencies()
 rules_cc_toolchains()
 
 #
+# Python setup
+#
+load("@rules_python//python:repositories.bzl", "py_repositories")
+
+py_repositories()
+
+#
 # JVM setup
 #
 load("@rules_jvm_external//:repositories.bzl", "rules_jvm_external_deps")
