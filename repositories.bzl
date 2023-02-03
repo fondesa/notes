@@ -14,6 +14,13 @@ def _repositories_android():
         strip_prefix = "rules_android-0.1.1",
         url = "https://github.com/bazelbuild/rules_android/archive/v0.1.1.zip",
     )
+    rules_android_ndk_commit = "81ec8b79dc50ee97e336a25724fdbb28e33b8d41"
+    http_archive(
+        name = "rules_android_ndk",
+        url = "https://github.com/bazelbuild/rules_android_ndk/archive/%s.zip" % rules_android_ndk_commit,
+        sha256 = "b29409496439cdcdb50a8e161c4953ca78a548e16d3ee729a1b5cd719ffdacbf",
+        strip_prefix = "rules_android_ndk-%s" % rules_android_ndk_commit,
+    )
 
 def _repositories_cc():
     sqlite_archive_id = "sqlite-amalgamation-3400100"
