@@ -9,13 +9,6 @@ def setup_repositories():
     _repositories_tools()
 
 def _repositories_android():
-    rules_android_version = "0.1.1"
-    http_archive(
-        name = "rules_android_sdk",
-        sha256 = "cd06d15dd8bb59926e4d65f9003bfc20f9da4b2519985c27e190cddc8b7a7806",
-        strip_prefix = "rules_android-%s" % rules_android_version,
-        url = "https://github.com/bazelbuild/rules_android/archive/v%s.zip" % rules_android_version,
-    )
     rules_android_ndk_commit = "81ec8b79dc50ee97e336a25724fdbb28e33b8d41"
     http_archive(
         name = "rules_android_ndk",

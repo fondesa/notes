@@ -1,5 +1,4 @@
 load("@rules_java//java:defs.bzl", "java_library")
-load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_library")
 
 java_library(
     name = "sample_bind",

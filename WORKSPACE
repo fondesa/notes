@@ -60,6 +60,7 @@ pinned_maven_install()
 load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
 
 rules_java_dependencies()
+
 rules_java_toolchains()
 
 #
@@ -79,8 +80,6 @@ register_toolchains("//:kotlin_toolchain")
 #
 # Android setup
 #
-load("@rules_android_sdk//android:rules.bzl", "android_sdk_repository")
-
 android_sdk_repository(
     name = "androidsdk",
     api_level = 33,
