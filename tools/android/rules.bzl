@@ -17,7 +17,7 @@ def android_bin(
         deps = deps,
     )
 
-    android_binary(
+    native.android_binary(
         name = name,
         manifest = manifest,
         manifest_values = {
