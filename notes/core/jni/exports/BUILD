@@ -9,5 +9,6 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         "//notes/core/cpp/src:sample_bind",
+        "//notes/core/jni",
     ],
 )

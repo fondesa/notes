@@ -6,6 +6,13 @@ config_setting(
 )
 
 config_setting(
+    name = "macos",
+    values = {
+        "apple_platform_type": "macos",
+    },
+)
+
+config_setting(
     name = "macos_x86_64",
     values = {
         "apple_platform_type": "macos",
