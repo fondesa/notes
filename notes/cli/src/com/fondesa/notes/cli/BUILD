@@ -5,6 +5,7 @@ kt_jvm_binary(
     srcs = [
         "App.kt",
     ],
+    jvm_flags = ["-Djava.library.path=notes/core/jni/exports"],
     main_class = "com.fondesa.notes.cli.AppKt",
     deps = [
         "//notes/core/jvm/src/com/fondesa/notes/core:sample_bind",

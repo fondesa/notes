@@ -35,17 +35,19 @@ config_setting(
     },
 )
 
+ANDROID_CROSSTOOL_TOP = "@androidndk//:toolchain"
+
 config_setting(
     name = "android",
     values = {
-        "crosstool_top": "//external:android/crosstool",
+        "crosstool_top": ANDROID_CROSSTOOL_TOP,
     },
 )
 
 config_setting(
     name = "android_arm",
     values = {
-        "crosstool_top": "//external:android/crosstool",
+        "crosstool_top": ANDROID_CROSSTOOL_TOP,
         "cpu": "armeabi-v7a",
     },
 )
@@ -53,7 +55,7 @@ config_setting(
 config_setting(
     name = "android_arm64",
     values = {
-        "crosstool_top": "//external:android/crosstool",
+        "crosstool_top": ANDROID_CROSSTOOL_TOP,
         "cpu": "arm64-v8a",
     },
 )
@@ -61,7 +63,7 @@ config_setting(
 config_setting(
     name = "android_x86",
     values = {
-        "crosstool_top": "//external:android/crosstool",
+        "crosstool_top": ANDROID_CROSSTOOL_TOP,
         "cpu": "x86",
     },
 )
@@ -69,7 +71,7 @@ config_setting(
 config_setting(
     name = "android_x86_64",
     values = {
-        "crosstool_top": "//external:android/crosstool",
+        "crosstool_top": ANDROID_CROSSTOOL_TOP,
         "cpu": "x86_64",
     },
 )

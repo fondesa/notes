@@ -5,9 +5,11 @@ java_library(
     srcs = [
         "SampleBind.java",
     ],
+    data = [
+        "//notes/core/jni/exports:jni_sample_bind",
+    ],
     # TODO: swap to stricter visibility in a real scenario
     visibility = ["//visibility:public"],
     deps = [
-        "//notes/core/jni/exports:jni_exports_sample_bind",
     ],
 )
