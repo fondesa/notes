@@ -1,12 +1,21 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 
 def setup_repositories():
+    _repositories_apple()
     _repositories_android()
     _repositories_cc()
+    _repositories_jni()
     _repositories_jvm()
     _repositories_kotlin()
     _repositories_python()
     _repositories_tools()
+
+def _repositories_apple():
+    http_archive(
+        name = "build_bazel_apple_support",
+        sha256 = "77a121a0f5d4cd88824429464ad2bfb54bdc8a3bccdb4d31a6c846003a3f5e44",
+        url = "https://github.com/bazelbuild/apple_support/releases/download/1.4.1/apple_support.1.4.1.tar.gz",
+    )
 
 def _repositories_android():
     rules_android_ndk_commit = "81ec8b79dc50ee97e336a25724fdbb28e33b8d41"
@@ -18,11 +27,11 @@ def _repositories_android():
     )
 
 def _repositories_cc():
-    rules_cc_version = "0.0.4"
+    rules_cc_version = "0.0.6"
     http_archive(
         name = "rules_cc",
         url = "https://github.com/bazelbuild/rules_cc/releases/download/{}/rules_cc-{}.tar.gz".format(rules_cc_version, rules_cc_version),
-        sha256 = "af6cc82d87db94585bceeda2561cb8a9d55ad435318ccb4ddfee18a43580fb5d",
+        sha256 = "3d9e271e2876ba42e114c9b9bc51454e379cbf0ec9ef9d40e2ae4cec61a31b40",
         strip_prefix = "rules_cc-%s" % rules_cc_version,
     )
     sqlite_archive_id = "sqlite-amalgamation-3400100"
@@ -40,6 +49,15 @@ def _repositories_cc():
         sha256 = "ffa17fbc5953900994e2deec164bb8949879ea09b411e07f215bfbb1f87f4632",
         strip_prefix = "googletest-%s" % google_test_version,
         url = "https://github.com/google/googletest/archive/refs/tags/v%s.zip" % google_test_version,
+    )
+
+def _repositories_jni():
+    rules_jni_version = "0.7.0"
+    http_archive(
+        name = "fmeum_rules_jni",
+        sha256 = "530a02c4d86f7bcfabd61e7de830f8c78fcb2ea70943eab8f2bfdad96620f1f5",
+        strip_prefix = "rules_jni-%s" % rules_jni_version,
+        url = "https://github.com/fmeum/rules_jni/archive/refs/tags/v%s.tar.gz" % rules_jni_version,
     )
 
 def _repositories_jvm():
