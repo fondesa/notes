@@ -1,7 +1,7 @@
 load("@rules_cc//cc:defs.bzl", "cc_library")
 
 cc_library(
-    name = "jni_exports_sample_bind",
+    name = "jni_sample_bind",
     srcs = [
         "export_sample_bind.cpp",
     ],
@@ -12,11 +12,4 @@ cc_library(
         "//notes/core/jni",
     ],
     alwayslink = True,
-)
-
-cc_binary(
-    name = "jni_sample_bind",
-    linkshared = True,
-    visibility = ["//visibility:public"],
-    deps = [":jni_exports_sample_bind"],
 )

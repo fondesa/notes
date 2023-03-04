@@ -8,6 +8,7 @@ import com.fondesa.notes.core.SampleBind
 class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        System.loadLibrary("app")
         setContentView(R.layout.activity_main)
         val fooFromJni = SampleBind().fooFromJNI()
         Log.d("LYRA", "foo: $fooFromJni")

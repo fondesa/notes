@@ -1,3 +1,5 @@
+load("@bazel_skylib//lib:selects.bzl", "selects")
+
 config_setting(
     name = "linux_x86_64",
     values = {
@@ -5,11 +7,12 @@ config_setting(
     },
 )
 
-config_setting(
+selects.config_setting_group(
     name = "macos",
-    values = {
-        "apple_platform_type": "macos",
-    },
+    match_any = [
+        ":macos_x86_64",
+        ":macos_arm64",
+    ],
 )
 
 config_setting(
@@ -41,37 +44,5 @@ config_setting(
     name = "android",
     values = {
         "crosstool_top": ANDROID_CROSSTOOL_TOP,
-    },
-)
-
-config_setting(
-    name = "android_arm",
-    values = {
-        "crosstool_top": ANDROID_CROSSTOOL_TOP,
-        "cpu": "armeabi-v7a",
-    },
-)
-
-config_setting(
-    name = "android_arm64",
-    values = {
-        "crosstool_top": ANDROID_CROSSTOOL_TOP,
-        "cpu": "arm64-v8a",
-    },
-)
-
-config_setting(
-    name = "android_x86",
-    values = {
-        "crosstool_top": ANDROID_CROSSTOOL_TOP,
-        "cpu": "x86",
-    },
-)
-
-config_setting(
-    name = "android_x86_64",
-    values = {
-        "crosstool_top": ANDROID_CROSSTOOL_TOP,
-        "cpu": "x86_64",
     },
 )
