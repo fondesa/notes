@@ -6,8 +6,8 @@ _MODE_FIX = "fix"
 def _buildifier_impl(ctx):
     args = [
         "-mode=%s" % ctx.attr.mode,
-        # Use native rules for Android.
-        "--warnings=-native-android",
+        # Suppress warnings here with --warnings (e.g. --warnings=-native-android).
+        "--warnings=-module-docstring,-function-docstring",
     ]
 
     if ctx.attr.mode == _MODE_CHECK:

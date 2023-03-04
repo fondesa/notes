@@ -6,6 +6,6 @@ android_bin(
     manifest = "AndroidManifest.xml",
     resource_files = glob(["res/**"]),
     deps = [
-        "//notes/core/jvm/src/com/fondesa/notes/core:sample_bind"
-    ]
+        "//notes/core/jvm/src/com/fondesa/notes/core:sample_bind",
+    ],
 )

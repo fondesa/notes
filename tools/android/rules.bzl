@@ -1,4 +1,5 @@
 load("@rules_kotlin//kotlin:android.bzl", "kt_android_library")
+load("@build_bazel_rules_android//android:rules.bzl", "android_binary")
 load("//tools/android:properties.bzl", "ANDROID_MIN_SDK", "ANDROID_TARGET_SDK")
 load("//tools/android/manifest:rules.bzl", "transform_manifest")
 
@@ -17,7 +18,7 @@ def android_bin(
         deps = deps,
     )
 
-    native.android_binary(
+    android_binary(
         name = name,
         manifest = manifest,
         manifest_values = {
