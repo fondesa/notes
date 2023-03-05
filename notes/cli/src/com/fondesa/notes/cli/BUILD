@@ -22,6 +22,7 @@ kt_jvm_binary(
     ],
     jvm_flags = ["-Djava.library.path=notes/cli/src/com/fondesa/notes/cli"],
     main_class = "com.fondesa.notes.cli.AppKt",
+    visibility = ["//apps:__pkg__"],
     deps = [
         ":app_jvm_wrapper",
         "//notes/core/jvm/src/com/fondesa/notes/core:sample_bind",

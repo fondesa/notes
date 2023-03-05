@@ -5,6 +5,7 @@ android_bin(
     srcs = glob(["*.kt"]),
     manifest = "AndroidManifest.xml",
     resource_files = glob(["res/**"]),
+    visibility = ["//apps:__pkg__"],
     deps = [
         "//notes/core/jvm/src/com/fondesa/notes/core:sample_bind",
     ],

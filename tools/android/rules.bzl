@@ -8,7 +8,8 @@ def android_bin(
         manifest,
         srcs = [],
         resource_files = [],
-        deps = []):
+        deps = [],
+        **kwargs):
     bin_internal_lib = "{}_bin_internal".format(name)
     kt_android_library(
         name = bin_internal_lib,
@@ -28,6 +29,7 @@ def android_bin(
             "versionName": "1",
         },
         deps = [bin_internal_lib],
+        **kwargs
     )
 
 def android_lib(**kwargs):
