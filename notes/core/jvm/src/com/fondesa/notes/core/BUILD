@@ -1,13 +1,13 @@
-load("@rules_java//java:defs.bzl", "java_library")
+load("//tools/jvm:rules.bzl", "jvm_native_lib")
 
-java_library(
+jvm_native_lib(
     name = "sample_bind",
     srcs = [
-        "SampleBind.java",
+        "SampleBind.kt",
+    ],
+    native_deps = [
+        "//notes/core/jni/exports:jni_sample_bind",
     ],
     # TODO: swap to stricter visibility in a real scenario
     visibility = ["//visibility:public"],
-    deps = [
-        "//notes/core/jni/exports:jni_sample_bind",
-    ],
 )
