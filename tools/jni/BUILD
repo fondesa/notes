@@ -1,3 +1,8 @@
+"""
+Rules to make the JNI headers (jni.h, jni_md.h) available in the include path.
+This is the same strategy used by Bazel and Tensorflow internally.
+"""
+
 load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
 
 cc_library(
@@ -15,11 +20,8 @@ cc_library(
         "//tools/platforms:android": [],
         "//conditions:default": ["."],
     }),
-    visibility = ["//notes/core/jni:__subpackages__"],
+    visibility = ["//visibility:public"],
 )
-
-# Rules to make the JNI headers (jni.h, jni_md.h) available in the include path.
-# This is the same strategy used by Bazel and Tensorflow internally.
 
 copy_file(
     name = "jni_h",
