@@ -5,11 +5,6 @@ cc_jni_library(
     srcs = [
         "export_sample_bind.cpp",
     ],
-    copts = [
-        "-Inotes/core/cpp/include",
-    ],
-    # TODO: swap to stricter visibility in a real scenario
-    visibility = ["//visibility:public"],
     deps = [
         "//notes/core/cpp/src:sample_bind",
     ],

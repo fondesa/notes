@@ -1,9 +1,8 @@
-load("@rules_cc//cc:defs.bzl", "cc_library")
+load("//tools/cpp:rules.bzl", "cc_headers_lib")
 
-cc_library(
+cc_headers_lib(
     name = "sample_bind",
     hdrs = [
         "sample_bind.hpp",
     ],
-    visibility = ["//visibility:public"],
 )
