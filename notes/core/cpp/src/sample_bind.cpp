@@ -2,6 +2,6 @@
 
 namespace SampleBind {
 int Foo::bar() {
-    return 78;
+    return 16;
 }
 }
