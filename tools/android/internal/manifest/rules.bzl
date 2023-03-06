@@ -28,7 +28,7 @@ def transform_manifest(
         manifest,
         min_sdk_version,
         target_sdk_version):
-    manifest_transformer = "//tools/android/manifest/internal:manifest_transformer"
+    manifest_transformer = "//tools/android/internal/manifest:manifest_transformer"
     manifest_transformer_cmd = " ".join([
         "$(location {})".format(manifest_transformer),
         "--input",
