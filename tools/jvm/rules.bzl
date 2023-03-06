@@ -26,6 +26,7 @@ def jvm_native_bin(
     jvm_bin(
         name = name,
         deps = deps + [java_wrapper_name],
+        jvm_flags = ["-Djava.library.path=%s" % native.package_name()],
         **kwargs
     )
 
