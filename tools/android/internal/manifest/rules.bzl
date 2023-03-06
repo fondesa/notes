@@ -17,7 +17,7 @@ gen_manifest = rule(
         "min_sdk_version": attr.int(mandatory = True),
         "target_sdk_version": attr.int(mandatory = True),
         "_template": attr.label(
-            default = "//tools/android/manifest:LibraryAndroidManifest.xml.tpl",
+            default = "//tools/android/internal/manifest:LibraryAndroidManifest.xml.tpl",
             allow_single_file = True,
         ),
     },
@@ -28,7 +28,7 @@ def transform_manifest(
         manifest,
         min_sdk_version,
         target_sdk_version):
-    manifest_transformer = "//tools/android/manifest:manifest_transformer"
+    manifest_transformer = "//tools/android/manifest/internal:manifest_transformer"
     manifest_transformer_cmd = " ".join([
         "$(location {})".format(manifest_transformer),
         "--input",

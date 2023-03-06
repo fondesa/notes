@@ -1,9 +1,5 @@
-load("//tools/android:properties.bzl", "ANDROID_MIN_SDK", "ANDROID_TARGET_SDK")
-load("//tools/android/manifest:rules.bzl", "gen_manifest")
-
-gen_manifest(
+alias(
     name = "default_library_manifest",
-    min_sdk_version = ANDROID_MIN_SDK,
-    target_sdk_version = ANDROID_TARGET_SDK,
+    actual = "//tools/android/internal/manifest:default_library_manifest",
     visibility = ["//notes/android:__subpackages__"],
 )
