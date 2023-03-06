@@ -3,7 +3,17 @@ load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_binary", "kt_jvm_library")
 load("@rules_cc//cc:defs.bzl", "cc_binary")
 load("//tools/jvm/internal:gen_java_class.bzl", "gen_java_class")
 
-jvm_lib = kt_jvm_library
+_JVM_VISIBILITY = [
+    "//notes/android:__subpackages__",
+    "//notes/cli:__subpackages__",
+    "//notes/core/jvm:__subpackages__",
+]
+
+def jvm_lib(**kwargs):
+    kt_jvm_library(
+        visibility = _JVM_VISIBILITY,
+        **kwargs
+    )
 
 jvm_bin = kt_jvm_binary
 

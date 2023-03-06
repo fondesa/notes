@@ -8,6 +8,4 @@ jvm_native_lib(
     native_deps = [
         "//notes/core/jni/exports:jni_sample_bind",
     ],
-    # TODO: swap to stricter visibility in a real scenario
-    visibility = ["//visibility:public"],
 )
