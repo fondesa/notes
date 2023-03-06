@@ -50,5 +50,6 @@ def android_lib(**kwargs):
 
     kt_android_library(
         manifest = manifest,
+        visibility = ["//notes/android:__subpackages__"],
         **kwargs
     )
