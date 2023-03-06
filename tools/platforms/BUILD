@@ -38,11 +38,9 @@ config_setting(
     },
 )
 
-ANDROID_CROSSTOOL_TOP = "@androidndk//:toolchain"
-
 config_setting(
     name = "android",
     values = {
-        "crosstool_top": ANDROID_CROSSTOOL_TOP,
+        "crosstool_top": "@androidndk//:toolchain",
     },
 )
