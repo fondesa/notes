@@ -6,6 +6,7 @@
 
 # Bazel dirs
 .aswb
+.clwb
 bazel-bin
 bazel-notes
 bazel-out
