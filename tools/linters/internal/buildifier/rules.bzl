@@ -1,18 +1,19 @@
 load("@bazel_skylib//lib:shell.bzl", "shell")
 
 _MODE_CHECK = "check"
-_MODE_FIX = "fix"
+_MODE_FORMAT = "format"
 
 def _buildifier_impl(ctx):
     args = [
-        "-mode=%s" % ctx.attr.mode,
         # Suppress warnings here with --warnings (e.g. --warnings=-native-android).
         "--warnings=-module-docstring,-function-docstring",
     ]
 
     if ctx.attr.mode == _MODE_CHECK:
+        args.append("-mode=check")
         args.append("-lint=warn")
-    elif ctx.attr.mode == _MODE_FIX:
+    elif ctx.attr.mode == _MODE_FORMAT:
+        args.append("-mode=fix")
         args.append("-lint=fix")
     else:
         fail("Buildifier: attr mode `%s` not recognized" % ctx.attr.mode)
@@ -40,16 +41,16 @@ buildifier = rule(
     implementation = _buildifier_impl,
     attrs = {
         "buildifier": attr.label(
-            default = "//tools/linters/buildifier:buildifier",
+            default = "//tools/linters/internal/buildifier:buildifier",
             cfg = "exec",
             executable = True,
         ),
         "mode": attr.string(
             mandatory = True,
-            values = [_MODE_CHECK, _MODE_FIX],
+            values = [_MODE_CHECK, _MODE_FORMAT],
         ),
         "_template": attr.label(
-            default = "//tools/linters/buildifier:buildifier.sh.tpl",
+            default = "//tools/linters/internal/buildifier:buildifier.sh.tpl",
             allow_single_file = True,
         ),
     },
