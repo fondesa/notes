@@ -5,7 +5,9 @@
 namespace Time {
 
 class ClockImpl : public Clock {
-   public:
+public:
+    virtual ~ClockImpl() = default;
+
     std::time_t currentTimeSeconds() override;
 };
 }
