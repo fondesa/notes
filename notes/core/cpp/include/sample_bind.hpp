@@ -2,7 +2,7 @@
 
 namespace SampleBind {
 class Foo {
-   public:
-    int bar();
+ public:
+  int bar();
 };
-}
+}  // namespace SampleBind
