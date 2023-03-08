@@ -2,17 +2,16 @@ load("//tools/cpp:rules.bzl", "cc_impl_lib")
 load("//notes/core/cpp:visibility.bzl", "IMPL_CONSUMERS")
 
 cc_impl_lib(
-    name = "database",
+    name = "sqlite",
     srcs = [
-        "database_cursor.cpp",
-        "database_exception.cpp",
-        "database_statement.cpp",
-    ],
-    hdrs = [
-        "database_exception.hpp",
+        "shared_sqlite_statement.cpp",
+        "shared_sqlite_statement.hpp",
+        "sqlite_database_exception.hpp",
     ],
     visibility = IMPL_CONSUMERS,
     deps = [
         "//notes/core/cpp/include/database",
+        "//notes/core/cpp/src/database",
+        "@org_sqlite//:sqlite",
     ],
 )
