@@ -8,6 +8,8 @@ cc_impl_lib(
         "shared_sqlite_statement.hpp",
         "sqlite_cursor.cpp",
         "sqlite_cursor.hpp",
+        "sqlite_database.cpp",
+        "sqlite_database.hpp",
         "sqlite_database_exception.hpp",
         "sqlite_statement.cpp",
         "sqlite_statement.hpp",

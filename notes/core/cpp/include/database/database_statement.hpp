@@ -9,6 +9,8 @@ namespace Db {
 
 class Statement {
  public:
+  virtual ~Statement() = default;
+
   template <typename T>
   void bind(int colIndex, T value);
 
