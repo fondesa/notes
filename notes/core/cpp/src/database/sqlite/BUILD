@@ -6,6 +6,8 @@ cc_impl_lib(
     srcs = [
         "shared_sqlite_statement.cpp",
         "shared_sqlite_statement.hpp",
+        "sqlite_cursor.cpp",
+        "sqlite_cursor.hpp",
         "sqlite_database_exception.hpp",
     ],
     visibility = IMPL_CONSUMERS,
