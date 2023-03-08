@@ -9,6 +9,8 @@ cc_impl_lib(
         "sqlite_cursor.cpp",
         "sqlite_cursor.hpp",
         "sqlite_database_exception.hpp",
+        "sqlite_statement.cpp",
+        "sqlite_statement.hpp",
     ],
     visibility = IMPL_CONSUMERS,
     deps = [

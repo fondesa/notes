@@ -6,6 +6,8 @@ namespace Db {
 
 class Cursor {
  public:
+  virtual ~Cursor() = default;
+
   virtual bool next() = 0;
 
   template <typename T>
