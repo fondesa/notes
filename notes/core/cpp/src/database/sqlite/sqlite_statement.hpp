@@ -6,11 +6,11 @@
 #include "shared_sqlite_statement.hpp"
 #include "sqlite3.h"
 
-namespace Db::Sql {
+namespace Db {
 
-class Statement : public Db::Statement {
+class SQLiteStatement : public Db::Statement {
  public:
-  Statement(sqlite3 *db, const std::string &sql);
+  SQLiteStatement(sqlite3 *db, const std::string &sql);
 
  protected:
   void executeVoid() override;

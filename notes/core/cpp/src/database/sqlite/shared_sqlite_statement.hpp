@@ -34,7 +34,7 @@ class SharedSQLiteCStatement {
   sqlite3_stmt *originalStmt;
   // Points to the heap allocated reference counter of the `sqlite3_stmt`.
   // It's used to make the owning object to live longer than the object which originally created it.
-  // e.g. The Db::Sql::Cursor should live longer than the Db::Sql::Statement which created it.
+  // e.g. Db::Cursor should live longer than the Db::Statement which created it.
   unsigned int *refCount;
   // Avoids any assignments making the assignment operator private.
   SharedSQLiteCStatement &operator=(const SharedSQLiteCStatement &other);
