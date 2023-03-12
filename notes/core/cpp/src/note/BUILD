@@ -1,7 +1,7 @@
-load("//tools/cpp:rules.bzl", "cc_impl_lib")
+load("//notes/core/cpp:defs.bzl", "cc_core_lib")
 load("//notes/core/cpp:visibility.bzl", "PUBLIC_CONSUMERS")
 
-cc_impl_lib(
+cc_core_lib(
     name = "note",
     srcs = [
         "note.cpp",

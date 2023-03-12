@@ -1,8 +1,4 @@
-load(
-    "//tools/cpp/internal:rules.bzl",
-    _cc_headers_lib = "cc_headers_lib",
-    _cc_impl_lib = "cc_impl_lib",
-)
+load("@rules_cc//cc:defs.bzl", "cc_library", _cc_test = "cc_test")
 
-cc_headers_lib = _cc_headers_lib
-cc_impl_lib = _cc_impl_lib
+cc_lib = cc_library
+cc_test = _cc_test
