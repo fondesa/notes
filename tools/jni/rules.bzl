@@ -1,3 +1,3 @@
-load("//tools/jni/internal:rules.bzl", _cc_jni_library = "cc_jni_library")
+load("//tools/jni/internal:rules.bzl", _cc_jni_lib = "cc_jni_lib")
 
-cc_jni_library = _cc_jni_library
+cc_jni_lib = _cc_jni_lib
