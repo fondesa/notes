@@ -1,5 +1,5 @@
 load("//tools/cpp:rules.bzl", "cc_headers_lib")
-load("//notes/core/cpp:visibility.bzl", "HDRS_CONSUMERS")
+load("//notes/core/cpp:visibility.bzl", "PUBLIC_CONSUMERS")
 
 cc_headers_lib(
     name = "database",
@@ -9,5 +9,5 @@ cc_headers_lib(
         "database_cursor.hpp",
         "database_statement.hpp",
     ],
-    visibility = HDRS_CONSUMERS,
+    visibility = PUBLIC_CONSUMERS,
 )

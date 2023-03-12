@@ -11,7 +11,6 @@ cc_test(
         "-Inotes/core/cpp/src",
     ],
     deps = [
-        "//notes/core/cpp/include/time",
         "//notes/core/cpp/src/time",
         "@com_github_googletest//:gtest_main",
     ],

@@ -1,5 +1,12 @@
 load("//tools/cpp:rules.bzl", "cc_impl_lib")
-load("//notes/core/cpp:visibility.bzl", "IMPL_CONSUMERS")
+load("//notes/core/cpp:visibility.bzl", "INTERNAL_CONSUMERS")
+
+package(
+    default_visibility = [
+        "//tensorflow/cc/experimental/libtf:__subpackages__",
+        "//tensorflow/python/saved_model:__subpackages__",
+    ],
+)
 
 cc_impl_lib(
     name = "time",
@@ -8,8 +15,9 @@ cc_impl_lib(
         "clock_impl.hpp",
         "time_format.cpp",
     ],
-    visibility = IMPL_CONSUMERS,
-    deps = [
-        "//notes/core/cpp/include/time",
+    hdrs = [
+        "clock.hpp",
+        "time_format.hpp",
     ],
+    visibility = INTERNAL_CONSUMERS,
 )

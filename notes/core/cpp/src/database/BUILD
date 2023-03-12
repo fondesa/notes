@@ -1,5 +1,5 @@
 load("//tools/cpp:rules.bzl", "cc_impl_lib")
-load("//notes/core/cpp:visibility.bzl", "IMPL_CONSUMERS")
+load("//notes/core/cpp:visibility.bzl", "INTERNAL_CONSUMERS")
 
 cc_impl_lib(
     name = "database",
@@ -11,7 +11,7 @@ cc_impl_lib(
     hdrs = [
         "database_exception.hpp",
     ],
-    visibility = IMPL_CONSUMERS,
+    visibility = INTERNAL_CONSUMERS,
     deps = [
         "//notes/core/cpp/include/database",
     ],
