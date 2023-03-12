@@ -8,9 +8,9 @@ namespace Db {
 
 class SQLiteDatabase : public Db::Database {
  public:
-  SQLiteDatabase(std::string dbPath, int flags);
+  explicit SQLiteDatabase(std::string dbPath);
 
-  ~SQLiteDatabase();
+  ~SQLiteDatabase() override;
 
   void executeTransaction(std::function<void()> transact) const override;
 

@@ -8,6 +8,8 @@ namespace Db {
 
 class Database {
  public:
+  virtual ~Database() = default;
+
   virtual void executeTransaction(std::function<void()> transact) const = 0;
 
   [[nodiscard]] virtual std::shared_ptr<Statement> createStatement(std::string sql) const = 0;

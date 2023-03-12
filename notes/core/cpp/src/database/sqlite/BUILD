@@ -3,13 +3,15 @@ load("//notes/core/cpp:visibility.bzl", "IMPL_CONSUMERS")
 
 cc_impl_lib(
     name = "sqlite",
+    hdrs = [
+        "sqlite_database.hpp",
+    ],
     srcs = [
         "shared_sqlite_statement.cpp",
         "shared_sqlite_statement.hpp",
         "sqlite_cursor.cpp",
         "sqlite_cursor.hpp",
         "sqlite_database.cpp",
-        "sqlite_database.hpp",
         "sqlite_database_exception.hpp",
         "sqlite_statement.cpp",
         "sqlite_statement.hpp",

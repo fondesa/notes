@@ -5,8 +5,9 @@
 
 namespace Db {
 
-SQLiteDatabase::SQLiteDatabase(std::string dbPath, int flags) {
+SQLiteDatabase::SQLiteDatabase(std::string dbPath) {
   auto movedPath = std::move(dbPath);
+  int flags = SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE;
   int rc = sqlite3_open_v2(movedPath.c_str(), &db, flags, nullptr);
   if (rc != SQLITE_OK) {
     throw Db::sqliteException(db);
