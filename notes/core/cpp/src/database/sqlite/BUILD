@@ -18,7 +18,6 @@ cc_impl_lib(
     ],
     visibility = INTERNAL_CONSUMERS,
     deps = [
-        "//notes/core/cpp/include/database",
         "//notes/core/cpp/src/database",
         "@org_sqlite//:sqlite",
     ],

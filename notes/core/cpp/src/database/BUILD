@@ -10,9 +10,9 @@ cc_impl_lib(
     ],
     hdrs = [
         "database_exception.hpp",
+        "database_statement.hpp",
+        "database_cursor.hpp",
+        "database.hpp",
     ],
     visibility = INTERNAL_CONSUMERS,
-    deps = [
-        "//notes/core/cpp/include/database",
-    ],
 )

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "database.hpp"
+#include "notes/core/cpp/src/database/database.hpp"
 
 namespace Db {
 
