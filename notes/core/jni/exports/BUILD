@@ -8,6 +8,6 @@ cc_jni_library(
     ],
     visibility = CONSUMERS,
     deps = [
-        "//notes/core/cpp/src:sample_bind",
+        "//notes/core/cpp/public:sample_bind",
     ],
 )
