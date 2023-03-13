@@ -1,5 +1,5 @@
 load("//tools/jvm:defs.bzl", "jvm_native_lib")
-load("//notes/core/jvm:visibility.bzl", "CONSUMERS")
+load("//notes/core/jvm:visibility.bzl", "PUBLIC_CONSUMERS")
 
 jvm_native_lib(
     name = "sample_bind",
@@ -9,5 +9,5 @@ jvm_native_lib(
     native_deps = [
         "//notes/core/jni/public:jni_sample_bind",
     ],
-    visibility = CONSUMERS,
+    visibility = PUBLIC_CONSUMERS,
 )
