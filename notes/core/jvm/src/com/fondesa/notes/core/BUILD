@@ -7,7 +7,7 @@ jvm_native_lib(
         "SampleBind.kt",
     ],
     native_deps = [
-        "//notes/core/jni/exports:jni_sample_bind",
+        "//notes/core/jni/public:jni_sample_bind",
     ],
     visibility = CONSUMERS,
 )
