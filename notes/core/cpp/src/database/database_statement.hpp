@@ -3,7 +3,7 @@
 #include <memory>
 #include <optional>
 #include <string>
-#include "database/database_cursor.hpp"
+#include "database_cursor.hpp"
 
 namespace Db {
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "notes/core/cpp/src/database/database.hpp"
+#include "database/sqlite/sqlite_database.hpp"
 
 namespace Db {
 

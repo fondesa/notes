@@ -1,4 +1,4 @@
-#include "database/database_cursor.hpp"
+#include "database_cursor.hpp"
 
 namespace Db {
 
