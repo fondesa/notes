@@ -1,4 +1,4 @@
-load("//tools/android:rules.bzl", "android_bin")
+load("//tools/android:defs.bzl", "android_bin")
 
 android_bin(
     name = "app",

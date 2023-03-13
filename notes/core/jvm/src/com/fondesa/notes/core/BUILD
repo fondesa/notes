@@ -1,4 +1,4 @@
-load("//tools/jvm:rules.bzl", "jvm_native_lib")
+load("//tools/jvm:defs.bzl", "jvm_native_lib")
 load("//notes/core/jvm:visibility.bzl", "CONSUMERS")
 
 jvm_native_lib(

@@ -1,4 +1,4 @@
-load("//tools/jni:rules.bzl", "cc_jni_lib")
+load("//tools/jni:defs.bzl", "cc_jni_lib")
 
 _SHARED_COPTS = [
     "-Inotes/core/cpp/src",

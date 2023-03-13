@@ -1,5 +1,5 @@
 load(
-    "//tools/android/internal:rules.bzl",
+    "//tools/android/internal:android.bzl",
     _android_bin = "android_bin",
     _android_lib = "android_lib",
 )

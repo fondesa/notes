@@ -1,4 +1,4 @@
-load("//tools/linters/internal/buildifier:rules.bzl", "buildifier")
+load("//tools/linters/internal/buildifier:buildifier.bzl", "buildifier")
 
 buildifier(
     name = "buildifier_check",

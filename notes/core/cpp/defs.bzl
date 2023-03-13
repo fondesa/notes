@@ -1,4 +1,4 @@
-load("//tools/cpp:rules.bzl", "cc_lib", "cc_test")
+load("//tools/cpp:defs.bzl", "cc_lib", "cc_test")
 
 _SHARED_COPTS = [
     "-Inotes/core/cpp/src",

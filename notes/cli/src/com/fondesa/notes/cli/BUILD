@@ -1,4 +1,4 @@
-load("//tools/jvm:rules.bzl", "jvm_native_bin")
+load("//tools/jvm:defs.bzl", "jvm_native_bin")
 
 jvm_native_bin(
     name = "app",
