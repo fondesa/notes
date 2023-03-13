@@ -3,12 +3,6 @@ load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_binary", "kt_jvm_library")
 load("@rules_cc//cc:defs.bzl", "cc_binary")
 load("//tools/jvm/internal:gen_java_class.bzl", "gen_java_class")
 
-_JVM_VISIBILITY = [
-    "//notes/android:__subpackages__",
-    "//notes/cli:__subpackages__",
-    "//notes/core/jvm:__subpackages__",
-]
-
 def jvm_native_bin(
         name,
         native_wrapper_name,
