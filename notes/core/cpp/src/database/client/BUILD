@@ -11,7 +11,7 @@ cc_core_lib(
     ],
     visibility = INTERNAL_CONSUMERS,
     deps = [
+        "//notes/core/cpp/src/database",
         "//notes/core/cpp/src/database/sqlite",
-        "//notes/core/cpp/src/database"
-    ]
+    ],
 )
