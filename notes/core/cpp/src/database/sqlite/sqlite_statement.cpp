@@ -114,4 +114,4 @@ int SQLiteStatement::reset() {
 int SQLiteStatement::clearBindings() {
   return sqlite3_clear_bindings(stmt);
 }
-}  // namespace Db::Sql
+}  // namespace Db

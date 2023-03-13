@@ -39,4 +39,4 @@ class SQLiteStatement : public Db::Statement {
   sqlite3 *db{};
   SharedSQLiteCStatement stmt;
 };
-}  // namespace Db::Sql
+}  // namespace Db
