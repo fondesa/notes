@@ -1,5 +1,4 @@
 load("//notes/core/cpp:defs.bzl", "cc_core_lib")
-load("//notes/core/cpp:visibility.bzl", "INTERNAL_CONSUMERS")
 
 cc_core_lib(
     name = "database",
@@ -14,5 +13,4 @@ cc_core_lib(
         "database_exception.hpp",
         "database_statement.hpp",
     ],
-    visibility = INTERNAL_CONSUMERS,
 )

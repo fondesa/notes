@@ -1,5 +1,4 @@
 load("//notes/core/cpp:defs.bzl", "cc_core_lib")
-load("//notes/core/cpp:visibility.bzl", "PUBLIC_CONSUMERS")
 
 cc_core_lib(
     name = "note",
@@ -9,5 +8,5 @@ cc_core_lib(
     hdrs = [
         "note.hpp",
     ],
-    visibility = PUBLIC_CONSUMERS,
+    is_public = True,
 )

@@ -1,5 +1,4 @@
 load("//notes/core/cpp:defs.bzl", "cc_core_lib")
-load("//notes/core/cpp:visibility.bzl", "INTERNAL_CONSUMERS")
 
 cc_core_lib(
     name = "sqlite",
@@ -16,7 +15,6 @@ cc_core_lib(
     hdrs = [
         "sqlite_database.hpp",
     ],
-    visibility = INTERNAL_CONSUMERS,
     deps = [
         "//notes/core/cpp/src/database",
         "@org_sqlite//:sqlite",
