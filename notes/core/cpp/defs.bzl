@@ -11,7 +11,11 @@ def cc_core_lib(**kwargs):
     )
 
 def cc_core_test(**kwargs):
+    deps = kwargs.pop("deps", [])
     cc_test(
         copts = _SHARED_COPTS,
+        deps = deps + [
+            "@com_github_googletest//:gtest_main",
+        ],
         **kwargs
     )

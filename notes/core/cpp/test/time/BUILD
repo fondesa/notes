@@ -8,6 +8,5 @@ cc_core_test(
     ],
     deps = [
         "//notes/core/cpp/src/time",
-        "@com_github_googletest//:gtest_main",
     ],
 )
