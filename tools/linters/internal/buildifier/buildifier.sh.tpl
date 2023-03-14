@@ -1,5 +1,23 @@
 #!/bin/bash
 
+BUILDIFIER_LINK_PATH=@@BUILDIFIER_LINK_PATH@@
+ARGS=@@ARGS@@
+
+__main() {
+  if [[ -z "${BUILD_WORKSPACE_DIRECTORY+x}" ]]; then
+    echo "The env variable BUILD_WORKSPACE_DIRECTORY is not set."
+    exit 1
+  fi
+
+  BUILDIFIER_EXEC=$(readlink "$BUILDIFIER_LINK_PATH")
+  if [[ ! -x "$BUILDIFIER_EXEC" ]]; then
+    echo "The buildifier executable does not exist or has not exec permissions"
+    exit 1
+  fi
+
+  (cd "$BUILD_WORKSPACE_DIRECTORY" && __exec_buildifier)
+}
+
 __exec_buildifier() {
   local file_filter=("WORKSPACE" "BUILD" "**/BUILD" "*.bzl")
   local buildifier_files
@@ -14,18 +32,4 @@ __exec_buildifier() {
   "$BUILDIFIER_EXEC" "${ARGS[@]}" $buildifier_files
 }
 
-BUILDIFIER_LINK_PATH=@@BUILDIFIER_LINK_PATH@@
-ARGS=@@ARGS@@
-
-if [[ -z "${BUILD_WORKSPACE_DIRECTORY+x}" ]]; then
-  echo "The env variable BUILD_WORKSPACE_DIRECTORY is not set."
-  exit 1
-fi
-
-BUILDIFIER_EXEC=$(readlink "$BUILDIFIER_LINK_PATH")
-if [[ ! -x "$BUILDIFIER_EXEC" ]]; then
-  echo "The buildifier executable does not exist or has not exec permissions"
-  exit 1
-fi
-
-(cd "$BUILD_WORKSPACE_DIRECTORY" && __exec_buildifier)
+__main
