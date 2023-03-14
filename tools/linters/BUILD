@@ -9,3 +9,9 @@ alias(
     actual = "//tools/linters/internal:buildifier_format",
     visibility = ["//visibility:public"],
 )
+
+alias(
+    name = "cpp_format",
+    actual = "//tools/linters/internal/clang:clang_format",
+    visibility = ["//visibility:public"],
+)
