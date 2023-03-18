@@ -1,7 +1,7 @@
 #include "draft/draft.hpp"
 #include <utility>
 
-Draft::Draft(): Draft("", "") {
+Draft::Draft() : Draft("", "") {
 }
 
 Draft::Draft(std::string title, std::string description) {
