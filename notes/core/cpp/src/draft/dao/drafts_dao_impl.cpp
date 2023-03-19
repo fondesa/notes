@@ -1,9 +1,9 @@
-#include "sqlite_drafts_dao.hpp"
+#include "drafts_dao_impl.hpp"
 
-SQLiteDraftsDao::SQLiteDraftsDao(std::shared_ptr<Db::Database> db) : db(std::move(db)) {
+DraftsDaoImpl::DraftsDaoImpl(std::shared_ptr<Db::Database> db) : db(std::move(db)) {
 }
 
-void SQLiteDraftsDao::createSchema() {
+void DraftsDaoImpl::createSchema() {
   db->createStatement(
         "CREATE TABLE drafts ("
         "id INTEGER PRIMARY KEY DEFAULT 0 CHECK (id = 0)"
@@ -13,7 +13,7 @@ void SQLiteDraftsDao::createSchema() {
       ->execute<void>();
 }
 
-std::optional<Draft> SQLiteDraftsDao::get() {
+std::optional<Draft> DraftsDaoImpl::get() {
   auto stmt = db->createStatement(
       "SELECT title, description "
       "FROM drafts "
@@ -29,7 +29,7 @@ std::optional<Draft> SQLiteDraftsDao::get() {
   return draft;
 }
 
-void SQLiteDraftsDao::upsert(Draft draft) {
+void DraftsDaoImpl::upsert(Draft draft) {
   auto stmt = db->createStatement(
       "INSERT INTO drafts (title, description) "
       "VALUES (?, ?) "
@@ -47,6 +47,6 @@ void SQLiteDraftsDao::upsert(Draft draft) {
   stmt->execute<void>();
 }
 
-void SQLiteDraftsDao::clear() {
+void DraftsDaoImpl::clear() {
   db->createStatement("DELETE FROM drafts")->execute<void>();
 }

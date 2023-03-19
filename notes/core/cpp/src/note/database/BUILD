@@ -3,13 +3,13 @@ load("//notes/core/cpp:defs.bzl", "cc_core_lib")
 cc_core_lib(
     name = "database",
     srcs = [
-        "database_client.cpp",
+        "notes_database_client.cpp",
     ],
     hdrs = [
-        "database_client.hpp",
+        "notes_database_client.hpp",
     ],
     deps = [
         "//notes/core/cpp/src/database",
-        "//notes/core/cpp/src/database/sqlite",
+        "//notes/core/cpp/src/draft/dao",
     ],
 )

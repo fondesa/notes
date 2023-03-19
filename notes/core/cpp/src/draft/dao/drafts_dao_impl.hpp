@@ -3,9 +3,9 @@
 #include "database/database.hpp"
 #include "drafts_dao.hpp"
 
-class SQLiteDraftsDao : public DraftsDao {
+class DraftsDaoImpl : public DraftsDao {
  public:
-  SQLiteDraftsDao(std::shared_ptr<Db::Database> db);
+  DraftsDaoImpl(std::shared_ptr<Db::Database> db);
 
   void createSchema() override;
 
