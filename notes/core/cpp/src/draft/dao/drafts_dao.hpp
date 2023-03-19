@@ -5,6 +5,8 @@
 
 class DraftsDao {
  public:
+  virtual ~DraftsDao() = default;
+
   virtual void createSchema() = 0;
 
   virtual std::optional<Draft> get() = 0;

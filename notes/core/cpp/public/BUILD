@@ -12,5 +12,5 @@ alias(
 
 alias(
     name = "draft",
-    actual = "//notes/core/cpp/src/draft:draft",
+    actual = "//notes/core/cpp/src/draft:draft_api",
 )

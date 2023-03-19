@@ -1,7 +1,7 @@
 load("//notes/core/cpp:defs.bzl", "cc_core_lib")
 
 cc_core_lib(
-    name = "draft",
+    name = "draft_api",
     srcs = [
         "draft.cpp",
     ],
