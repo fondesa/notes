@@ -4,7 +4,7 @@ visibility("//notes/core/jni/...")
 
 _SHARED_COPTS = [
     "-Inotes/core/cpp/src",
-    "-Inotes/core/cpp/jni",
+    "-Inotes/core/jni/src",
 ]
 
 _INTERNAL_CONSUMERS = [
