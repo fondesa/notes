@@ -1,7 +1,7 @@
 #include "notes_database_client.hpp"
 #include <iostream>
 #include "database/database_exception.hpp"
-#include "draft/dao/drafts_dao_impl.hpp"
+#include "note/dao/drafts_dao_impl.hpp"
 
 NotesDatabaseClient::NotesDatabaseClient(std::shared_ptr<Db::Database> db) {
   auto version = 1;
