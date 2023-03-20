@@ -1,7 +1,7 @@
 #pragma once
 
 #include <optional>
-#include "draft/draft.hpp"
+#include "note/draft.hpp"
 
 class DraftsDao {
  public:

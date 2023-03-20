@@ -9,8 +9,3 @@ alias(
     name = "note",
     actual = "//notes/core/cpp/src/note:note",
 )
-
-alias(
-    name = "draft",
-    actual = "//notes/core/cpp/src/draft:draft_api",
-)

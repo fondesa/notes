@@ -11,6 +11,6 @@ cc_core_lib(
     ],
     deps = [
         "//notes/core/cpp/src/database",
-        "//notes/core/cpp/src/draft:draft_api",
+        "//notes/core/cpp/src/note",
     ],
 )

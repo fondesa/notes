@@ -10,6 +10,6 @@ cc_core_lib(
     ],
     deps = [
         "//notes/core/cpp/src/database",
-        "//notes/core/cpp/src/draft/dao",
+        "//notes/core/cpp/src/note/dao",
     ],
 )
