@@ -3,9 +3,9 @@ load("//tools/jvm:defs.bzl", "jvm_native_bin")
 jvm_native_bin(
     name = "app",
     srcs = [
-        "App.kt",
+        "CliApp.kt",
     ],
-    main_class = "com.fondesa.notes.cli.AppKt",
+    main_class = "com.fondesa.notes.cli.CliApp",
     native_wrapper_deps = [
         "//notes/core/jni/public:jni_notes_interactor",
     ],
