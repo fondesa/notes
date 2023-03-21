@@ -7,6 +7,6 @@ android_bin(
     resource_files = glob(["res/**"]),
     visibility = ["//apps:__pkg__"],
     deps = [
-        "//notes/core/jvm/src/com/fondesa/notes/core:sample_bind",
+        "//notes/core/jvm/src/com/fondesa/notes/core/notes/internal",
     ],
 )

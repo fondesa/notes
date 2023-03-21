@@ -5,11 +5,6 @@ package(default_visibility = [
 ])
 
 alias(
-    name = "jni_sample_bind",
-    actual = "//notes/core/jni/src/exports:jni_sample_bind",
-)
-
-alias(
     name = "jni_notes_interactor",
     actual = "//notes/core/jni/src/exports:jni_notes_interactor",
 )

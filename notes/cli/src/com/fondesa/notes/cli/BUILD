@@ -7,13 +7,11 @@ jvm_native_bin(
     ],
     main_class = "com.fondesa.notes.cli.AppKt",
     native_wrapper_deps = [
-        "//notes/core/jni/public:jni_sample_bind",
         "//notes/core/jni/public:jni_notes_interactor",
     ],
     native_wrapper_name = "app_native",
     visibility = ["//apps:__pkg__"],
     deps = [
-        "//notes/core/jvm/src/com/fondesa/notes/core:sample_bind",
         "//notes/core/jvm/src/com/fondesa/notes/core/notes/internal",
     ],
 )
