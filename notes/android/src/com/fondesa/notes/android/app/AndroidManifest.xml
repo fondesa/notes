@@ -4,7 +4,7 @@
     package="com.fondesa.notes.android.app">
 
     <application
-        android:name=".App"
+        android:name=".AndroidApp"
         android:label="Bazel notes"
         android:supportsRtl="true"
         tools:ignore="GoogleAppIndexingWarning">
