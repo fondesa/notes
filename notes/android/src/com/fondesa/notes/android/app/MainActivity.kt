@@ -9,7 +9,6 @@ import com.fondesa.notes.core.notes.internal.NativeNotesInteractor
 class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        System.loadLibrary("app")
         setContentView(R.layout.activity_main)
 
         val interactor: NotesInteractor = NativeNotesInteractor()
