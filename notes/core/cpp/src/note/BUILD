@@ -5,10 +5,13 @@ cc_core_lib(
     srcs = [
         "draft.cpp",
         "note.cpp",
+        "notes_interactor_impl.cpp",
+        "notes_interactor_impl.hpp",
     ],
     hdrs = [
         "draft.hpp",
         "note.hpp",
+        "notes_interactor.hpp",
     ],
     is_public = True,
 )
