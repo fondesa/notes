@@ -7,7 +7,7 @@ namespace Jni {
 
 class JvmClass {
  public:
-  static JvmClass from(JNIEnv *env, std::string className);
+  JvmClass(JNIEnv *env, std::string className);
 
   jmethodID constructor(std::string signature);
 
@@ -16,8 +16,6 @@ class JvmClass {
   jfieldID field(std::string name, std::string signature);
 
  private:
-  JvmClass(JNIEnv *env, jclass cls);
-
   JNIEnv *env;
   jclass cls;
 };

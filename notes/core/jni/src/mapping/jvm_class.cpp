@@ -1,15 +1,11 @@
 #include "jvm_class.hpp"
 
-Jni::JvmClass Jni::JvmClass::from(JNIEnv *env, std::string className) {
-  jclass cls = env->FindClass(className.c_str());
+Jni::JvmClass::JvmClass(JNIEnv *env, std::string className) : env(env) {
+  cls = env->FindClass(className.c_str());
   if (!cls) {
     auto msg = "The class \"" + className + "\" doesn't exist.";
     env->ThrowNew(env->FindClass("java/lang/ClassNotFoundException"), msg.c_str());
   }
-  return Jni::JvmClass(env, cls);
-}
-
-Jni::JvmClass::JvmClass(JNIEnv *env, jclass cls) : env(env), cls(cls) {
 }
 
 jmethodID Jni::JvmClass::constructor(std::string signature) {
