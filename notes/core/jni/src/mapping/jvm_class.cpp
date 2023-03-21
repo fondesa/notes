@@ -8,6 +8,10 @@ Jni::JvmClass::JvmClass(JNIEnv *env, std::string className) : env(env) {
   }
 }
 
+jclass Jni::JvmClass::get() {
+  return cls;
+}
+
 jmethodID Jni::JvmClass::constructor(std::string signature) {
   return method("<init>", signature);
 }

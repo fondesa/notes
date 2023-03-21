@@ -2,7 +2,7 @@
 
 #include <memory>
 #include "database/database.hpp"
-#include "note/dao/drafts_dao.hpp"
+#include "notes/dao/drafts_dao.hpp"
 
 class NotesDatabaseClient {
  public:

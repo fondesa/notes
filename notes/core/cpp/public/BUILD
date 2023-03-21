@@ -6,6 +6,6 @@ alias(
 )
 
 alias(
-    name = "note",
+    name = "notes",
     actual = "//notes/core/cpp/src/notes:notes",
 )

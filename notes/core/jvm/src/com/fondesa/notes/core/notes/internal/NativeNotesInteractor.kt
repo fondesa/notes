@@ -5,11 +5,15 @@ import com.fondesa.notes.core.notes.NotesInteractor
 
 // TODO make internal
 class NativeNotesInteractor : NotesInteractor {
-    private val address: Long by lazy { getInteractorNativeAddress() }
+    private val address: Long by lazy { nativeAddress() }
 
     override fun getDraft(): Draft? = getDraft(address)
 
+    override fun dispose() = dispose(address)
+
     private external fun getDraft(address: Long): Draft?
 
-    private external fun getInteractorNativeAddress(): Long
+    private external fun nativeAddress(): Long
+
+    private external fun dispose(address: Long)
 }

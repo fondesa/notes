@@ -5,6 +5,7 @@ cc_core_lib(
     srcs = [
         "draft.cpp",
         "note.cpp",
+        "notes_interactor_factory.cpp",
         "notes_interactor_impl.cpp",
         "notes_interactor_impl.hpp",
     ],
@@ -12,6 +13,7 @@ cc_core_lib(
         "draft.hpp",
         "note.hpp",
         "notes_interactor.hpp",
+        "notes_interactor_factory.hpp",
     ],
     is_public = True,
 )

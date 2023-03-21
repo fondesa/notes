@@ -1,4 +1,4 @@
-#include "note/note.hpp"
+#include "note.hpp"
 #include <utility>
 
 Note::Note(int id, std::string title, std::string description, std::time_t lastUpdateTime) {

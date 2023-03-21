@@ -5,5 +5,7 @@
 
 class NotesInteractor {
  public:
+  virtual ~NotesInteractor() = default;
+
   virtual std::optional<Draft> getDraft() = 0;
 };

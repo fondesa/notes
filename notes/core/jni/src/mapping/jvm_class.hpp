@@ -9,6 +9,8 @@ class JvmClass {
  public:
   JvmClass(JNIEnv *env, std::string className);
 
+  jclass get();
+
   jmethodID constructor(std::string signature);
 
   jmethodID method(std::string name, std::string signature);

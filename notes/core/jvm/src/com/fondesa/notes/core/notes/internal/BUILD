@@ -7,8 +7,9 @@ jvm_native_lib(
         "NativeNotesInteractor.kt",
     ],
     native_deps = [
-        #        "//notes/core/jni/public:jni_sample_bind",
+        "//notes/core/jni/public:jni_notes_interactor",
     ],
+    # TODO: make internal
     visibility = PUBLIC_CONSUMERS,
     deps = [
         "//notes/core/jvm/src/com/fondesa/notes/core/notes",
