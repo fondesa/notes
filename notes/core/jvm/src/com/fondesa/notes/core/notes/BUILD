@@ -2,7 +2,7 @@ load("//tools/jvm:defs.bzl", "jvm_native_lib")
 load("//notes/core/jvm:visibility.bzl", "PUBLIC_CONSUMERS")
 
 jvm_native_lib(
-    name = "note",
+    name = "notes",
     srcs = [
         "Draft.kt",
     ],
