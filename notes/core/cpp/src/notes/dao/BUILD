@@ -1,15 +1,16 @@
 load("//notes/core/cpp:defs.bzl", "cc_core_lib")
 
 cc_core_lib(
-    name = "database",
+    name = "dao",
     srcs = [
-        "notes_database_client.cpp",
+        "drafts_dao_impl.cpp",
     ],
     hdrs = [
-        "notes_database_client.hpp",
+        "drafts_dao.hpp",
+        "drafts_dao_impl.hpp",
     ],
     deps = [
         "//notes/core/cpp/src/database",
-        "//notes/core/cpp/src/note/dao",
+        "//notes/core/cpp/src/notes",
     ],
 )

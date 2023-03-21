@@ -7,5 +7,5 @@ alias(
 
 alias(
     name = "note",
-    actual = "//notes/core/cpp/src/note:note",
+    actual = "//notes/core/cpp/src/notes:notes",
 )
