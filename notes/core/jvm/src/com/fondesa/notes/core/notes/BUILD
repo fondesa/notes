@@ -1,13 +1,11 @@
-load("//tools/jvm:defs.bzl", "jvm_native_lib")
+load("//tools/jvm:defs.bzl", "jvm_lib")
 load("//notes/core/jvm:visibility.bzl", "PUBLIC_CONSUMERS")
 
-jvm_native_lib(
+jvm_lib(
     name = "notes",
     srcs = [
         "Draft.kt",
-    ],
-    native_deps = [
-        #        "//notes/core/jni/public:jni_sample_bind",
+        "NotesInteractor.kt",
     ],
     visibility = PUBLIC_CONSUMERS,
 )
