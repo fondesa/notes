@@ -1,4 +1,4 @@
-package com.fondesa.notes.core.note
+package com.fondesa.notes.core.notes
 
 data class Draft(
     val title: String,
