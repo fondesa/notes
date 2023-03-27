@@ -65,6 +65,13 @@ def _repositories_jvm():
         strip_prefix = "rules_jvm_external-%s" % rules_jvm_external_version,
         url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % rules_jvm_external_version,
     )
+    dagger_version = "2.45"
+    http_archive(
+        name = "dagger",
+        strip_prefix = "dagger-dagger-%s" % dagger_version,
+        sha256 = "8f55f8b081a72835fed96be66dbfccb95ee2ceff092872397e5e639cccec2114",
+        url = "https://github.com/google/dagger/archive/dagger-%s.zip" % dagger_version,
+    )
 
 def _repositories_kotlin():
     rules_kotlin_version = "1.7.1"

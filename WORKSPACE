@@ -36,17 +36,19 @@ load("@rules_jvm_external//:setup.bzl", "rules_jvm_external_setup")
 rules_jvm_external_setup()
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
+load("@dagger//:workspace_defs.bzl", "DAGGER_ARTIFACTS", "DAGGER_REPOSITORIES")
 load("//:dependencies.bzl", "MAVEN_ARTIFACTS")
 
 maven_install(
-    artifacts = MAVEN_ARTIFACTS,
+    artifacts = DAGGER_ARTIFACTS + MAVEN_ARTIFACTS,
     fail_if_repin_required = True,
     fail_on_missing_checksum = True,
     maven_install_json = "//:maven_install.json",
-    repositories = [
+    repositories = DAGGER_REPOSITORIES + [
         "https://repo1.maven.org/maven2",
     ],
-    strict_visibility = True,
+    # TODO: maybe re-enable this in future?
+    #    strict_visibility = True,
     version_conflict_policy = "pinned",
 )
 
