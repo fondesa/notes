@@ -13,5 +13,6 @@ jvm_native_lib(
     visibility = PUBLIC_CONSUMERS,
     deps = [
         "//notes/core/jvm/src/com/fondesa/notes/core/notes",
+        "@maven//:javax_inject_javax_inject",
     ],
 )

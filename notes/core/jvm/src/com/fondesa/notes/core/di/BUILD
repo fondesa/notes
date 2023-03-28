@@ -1,0 +1,15 @@
+load("//tools/jvm:defs.bzl", "jvm_lib")
+load("//notes/core/jvm:visibility.bzl", "PUBLIC_CONSUMERS")
+
+jvm_lib(
+    name = "di",
+    srcs = [
+        "CoreModule.kt",
+    ],
+    # TODO: make internal
+    visibility = PUBLIC_CONSUMERS,
+    deps = [
+        "//notes/core/jvm/src/com/fondesa/notes/core/notes/di",
+        "//third_party/jvm:dagger",
+    ],
+)

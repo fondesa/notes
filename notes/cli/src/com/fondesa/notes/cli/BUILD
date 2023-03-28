@@ -4,6 +4,7 @@ jvm_native_bin(
     name = "app",
     srcs = [
         "CliApp.kt",
+        "CliAppComponent.kt",
     ],
     main_class = "com.fondesa.notes.cli.CliApp",
     native_wrapper_deps = [
@@ -12,6 +13,9 @@ jvm_native_bin(
     native_wrapper_name = "app_native",
     visibility = ["//apps:__pkg__"],
     deps = [
-        "//notes/core/jvm/src/com/fondesa/notes/core/notes/internal",
+        # TODO: remove this
+        "//notes/core/jvm/src/com/fondesa/notes/core/di",
+        "//notes/core/jvm/src/com/fondesa/notes/core/notes",
+        "//third_party/jvm:dagger",
     ],
 )

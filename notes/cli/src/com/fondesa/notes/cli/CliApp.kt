@@ -1,8 +1,5 @@
 package com.fondesa.notes.cli
 
-import com.fondesa.notes.core.notes.NotesInteractor
-import com.fondesa.notes.core.notes.internal.NativeNotesInteractor
-
 object CliApp {
     init {
         System.loadLibrary("app_native")
@@ -10,7 +7,8 @@ object CliApp {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val interactor: NotesInteractor = NativeNotesInteractor()
+        val appComponent = CliAppComponent.create()
+        val interactor = appComponent.interactor()
         val draft = interactor.getDraft()
         println("Draft title: ${draft?.title}, desc: ${draft?.description}")
     }
