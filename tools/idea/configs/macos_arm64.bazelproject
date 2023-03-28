@@ -1,0 +1,5 @@
+sync_flags:
+  --config=macos_arm64
+
+build_flags:
+  --config=macos_arm64
